@@ -3,7 +3,8 @@ import {
   SequelizeAttributes,
   SequelizeSetAssociation,
   SequelizeGetAssociation,
-  SequelizeGetManyAssociation
+  SequelizeGetManyAssociation,
+  SequelizeAddAssociation
 } from "../types";
 import {
   UserAddressModel,
@@ -37,7 +38,7 @@ interface UserAssociates {
     UserAddressAttributes,
     UserAddressInstance
   >;
-  setStatement: SequelizeSetAssociation<StatementInstance, UserInstance>;
+  addStatement: SequelizeAddAssociation<StatementInstance>;
   getStatements: SequelizeGetManyAssociation<
     StatementAttributes,
     StatementInstance

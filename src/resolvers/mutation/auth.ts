@@ -10,8 +10,7 @@ import {
   isValidEmail,
   ArgumentError,
   CustomError,
-  UniqueFieldError,
-  NotFoundError
+  UniqueFieldError
 } from "../../utils";
 import { UserInstance } from "../../db/models/user";
 

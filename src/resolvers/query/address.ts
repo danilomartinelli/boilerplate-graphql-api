@@ -1,17 +1,9 @@
-import { UserAttributes } from "../../db/models/user";
+import { UserInstance } from "../../db/models/user";
 import { IContext } from "../../types";
 
-export const userAddressMapByUser = async (
-  user: UserAttributes,
-  _: {},
-  ctx: IContext
-) => {
-  const db = ctx.db;
-
+export const userAddressMapByUser = async (user: UserInstance, _: {}) => {
   try {
-    const userAddress = await db.UserAddress.findOne({
-      where: { userId: user.id }
-    });
+    const userAddress = await user.getUserAddress();
     return userAddress;
   } catch (err) {
     throw err;

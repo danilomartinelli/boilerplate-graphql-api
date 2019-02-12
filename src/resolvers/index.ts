@@ -1,12 +1,12 @@
 import { PubSub } from "apollo-server";
 import { ScalarTypes } from "./scalarTypes";
-import { login, signUp /* createStatement */ } from "./mutation";
+import { login, signUp, createStatement } from "./mutation";
 import {
   currentUser,
   users,
   user,
-  userAddressMapByUser
-  // statementsMapByUser
+  userAddressMapByUser,
+  statementsMapByUser
 } from "./query";
 import { enums } from "./enums";
 
@@ -20,7 +20,7 @@ export const resolvers = {
   ...enums,
 
   // Mutations
-  Mutation: { login, signUp /* createStatement */ } as any,
+  Mutation: { login, signUp, createStatement } as any,
 
   // Queries
   Query: {
@@ -31,7 +31,7 @@ export const resolvers = {
 
   // Map To Query
   User: {
-    address: userAddressMapByUser
-    // statements: statementsMapByUser
+    address: userAddressMapByUser,
+    statements: statementsMapByUser
   }
 };
