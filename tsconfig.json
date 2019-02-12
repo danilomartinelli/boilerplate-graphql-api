@@ -1,12 +1,17 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "ES2017",
     "module": "commonjs",
-    "lib": ["esnext"],
-    "outDir": "build",
-    "strict": true,
+    "alwaysStrict": true,
     "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "sourceMap": true,
+    "target": "ES2017",
+    "strictNullChecks": true,
+    "outDir": "build",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/*.ts", "src/*/*.ts"],
+  "exclude": []
 }

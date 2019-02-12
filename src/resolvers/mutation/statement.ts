@@ -15,7 +15,7 @@ export const createStatement = async (
     throw new ArgumentError("O tamanho do texto não pode ser 0");
   }
 
-  let transaction = await db.sequelize.transaction();
+  const transaction = await db.sequelize.transaction();
   try {
     const user = await db.User.findOne({
       where: { id: userId },

@@ -11,7 +11,7 @@ interface ICallBackCtx {
       authorization: string | undefined;
     };
   };
-  connection: Object | undefined;
+  connection: object | undefined;
 }
 
 const typeDefs: DocumentNode = fs.readFileSync(

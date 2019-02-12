@@ -62,7 +62,7 @@ export const signUp = async (
 
   const cryptPassword = await bcrypt.hash(data.password, 10);
 
-  let transaction = await db.sequelize.transaction();
+  const transaction = await db.sequelize.transaction();
 
   try {
     const user = await db.User.findOne({

@@ -2,10 +2,14 @@
   "name": "boilerplate-graphql-api",
   "version": "1.0.0",
   "description": "Boilerplate with Apollo Server, Graphql and Sequelize",
-  "main": "index.ts",
+  "main": "build/index.js",
   "scripts": {
-    "start": "NODE_ENV=production ts-node -r dotenv/config src/index.ts",
-    "dev": "nodemon -x ts-node -r dotenv/config src/index.ts",
+    "dev": "nodemon --watch src -e ts --exec npm run dev:start",
+    "dev:start": "npm run lint && npm run build && npm start",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "build": "npm run tsc && cp src/schema.graphql build/",
+    "tsc": "tsc",
+    "start": "node -r dotenv/config .",
     "sync": "ts-node -r dotenv/config src/db/sync.ts",
     "gql-gen": "rm -rf src/types/schema.ts && node_modules/.bin/gql-gen",
     "upgrade-interactive": "npm-check --upgrade",
@@ -24,6 +28,9 @@
     "nodemon": "^1.18.10",
     "npm-check": "^5.9.0",
     "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-immutable": "^5.1.2",
     "typescript": "^3.3.3"
   },
   "dependencies": {
