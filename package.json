@@ -8,7 +8,8 @@
     "dev": "nodemon -x ts-node -r dotenv/config src/index.ts",
     "sync": "ts-node -r dotenv/config src/db/sync.ts",
     "gql-gen": "rm -rf src/types/schema.ts && node_modules/.bin/gql-gen",
-    "upgrade-interactive": "npm-check --upgrade"
+    "upgrade-interactive": "npm-check --upgrade",
+    "sequelize": "sequelize"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",

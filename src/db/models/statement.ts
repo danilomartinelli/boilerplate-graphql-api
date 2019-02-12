@@ -1,6 +1,5 @@
 import * as Sequelize from "sequelize";
 import { SequelizeAttributes } from "../types";
-import { CountryAbbreviation, Uf } from "../../types";
 
 export interface StatementAttributes {
   id?: string;
