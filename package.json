@@ -9,7 +9,8 @@
     "sync": "ts-node -r dotenv/config src/db/sync.ts",
     "gql-gen": "rm -rf src/types/schema.ts && node_modules/.bin/gql-gen",
     "upgrade-interactive": "npm-check --upgrade",
-    "sequelize": "sequelize"
+    "create-migration": "sequelize --name $NAME migration:generate",
+    "run-migrations": "db:migrate"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
