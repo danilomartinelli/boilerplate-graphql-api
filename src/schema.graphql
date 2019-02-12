@@ -1,0 +1,120 @@
+scalar Date
+
+type Query {
+  users(limit: Int, offset: Int): [User]!
+  user(where: UserWhereInput!): User
+  currentUser: User!
+}
+
+type Mutation {
+  signUp(data: UserSignUpInput!): PayloadAuth!
+  login(email: String!, password: String!): PayloadAuth!
+  createStatement(text: String!): Statement!
+}
+
+type PayloadAuth {
+  token: String!
+  user: User!
+}
+
+type User {
+  id: ID!
+
+  email: String!
+  firstName: String!
+  lastName: String!
+  birthday: Date!
+  gender: GENDER!
+
+  address: Address!
+  statements(limit: Int, offset: Int): [Statement!]!
+
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Address {
+  country: COUNTRY_ABBREVIATION!
+  state: UF!
+  city: String!
+  neighborhood: String!
+  street: String!
+  zipCode: String!
+  number: String!
+
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Statement {
+  id: ID!
+
+  text: String!
+
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+input UserWhereInput {
+  email: String
+}
+
+input UserSignUpInput {
+  email: ID!
+  password: String!
+  firstName: String!
+  lastName: String!
+  birthday: Date!
+  gender: GENDER!
+  address: UserAddressSignUpInput!
+}
+
+input UserAddressSignUpInput {
+  country: COUNTRY_ABBREVIATION!
+  state: UF!
+  city: String!
+  neighborhood: String!
+  street: String!
+  zipCode: String!
+  number: String!
+}
+
+enum COUNTRY_ABBREVIATION {
+  BR
+}
+
+enum UF {
+  AC
+  AL
+  AP
+  AM
+  BA
+  CE
+  DF
+  ES
+  GO
+  MA
+  MT
+  MS
+  MG
+  PA
+  PB
+  PR
+  PE
+  PI
+  RJ
+  RN
+  RS
+  RO
+  RR
+  SC
+  SP
+  SE
+  TO
+}
+
+enum GENDER {
+  MALE
+  FEMALE
+  OTHER
+}

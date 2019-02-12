@@ -1,0 +1,5 @@
+schema: src/schema.graphql
+generates:
+  src/types/schema.ts:
+    - typescript-common
+    - typescript-server

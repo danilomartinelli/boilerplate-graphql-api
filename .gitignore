@@ -1,0 +1,7 @@
+node_modules
+build
+src/**/*.js
+!src/db/migrations/*.js
+!src/db/seeders/*.js
+yarn.lock
+.env
