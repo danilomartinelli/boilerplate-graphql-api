@@ -40,7 +40,6 @@ export const login = async (_: any, args: LoginMutationArgs, ctx: IContext) => {
       { id: user!.id!, date: new Date() },
       process.env.APP_SECRET!
     );
-    await user.update({ countWrongPassword8: 0 });
 
     return { user: user!.get(), token };
   } else {
