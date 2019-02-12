@@ -41,6 +41,15 @@
     "sequelize-replace-enum-postgres": "^1.5.0",
     "ts-node": "^7.0.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@git.cubos.io:cubos/boilerplate-graphql-api.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "graphql",
+    "api"
+  ],
   "author": "Danilo Martinelli",
   "license": "MIT"
 }
