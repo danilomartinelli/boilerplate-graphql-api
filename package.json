@@ -18,10 +18,10 @@
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
-    "@types/graphql": "^14.0.5",
+    "@types/graphql": "^14.0.6",
     "@types/jsonwebtoken": "^8.3.0",
-    "@types/node": "^11.9.0",
-    "@types/sequelize": "^4.27.35",
+    "@types/node": "^11.9.3",
+    "@types/sequelize": "^4.27.36",
     "graphql-code-generator": "^0.16.1",
     "graphql-codegen-typescript-common": "^0.16.1",
     "graphql-codegen-typescript-server": "^0.16.1",
